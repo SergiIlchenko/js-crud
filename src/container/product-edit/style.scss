@@ -1,0 +1,91 @@
+@use '../../lib/service.scss' as s;
+
+.form {
+	display: flex;
+	flex-direction: column;
+	padding: s.space(4);
+	gap: s.space(6);
+
+	&__title {
+		font-size: 24px;
+		font-weight: bold;
+		padding-bottom: s.space(1);
+		color: blue;
+	}
+
+	&__product {
+		display: grid;
+		padding: s.space(4);
+		gap: s.space(6);
+		border: 1px solid s.color('light');
+	}
+
+	&__info {
+		font-size: 18px;
+		font-weight: 600;
+	}
+
+	&__content {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: s.space(4);
+
+	}
+
+	&__filed {
+		display: flex;
+		flex-direction: column;
+		gap: s.space(2);
+	}
+
+	&__label {
+		font-size: 14px;
+	}
+
+	&__input {
+		border: 1px solid s.color('light');
+		padding: s.space(2);
+	}
+
+	&__description {
+		width: 700px;
+		
+	}
+
+	&__text {
+		font-size: 12px;
+		color: gray;
+	}
+
+	&__button {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: s.space(4);
+	}
+
+	&__button__save {
+		background-color: blue;
+		color: white;
+		padding: s.space(2);
+		border-radius: 4px;
+		text-decoration: none;
+		text-align: center;
+	}
+
+	&__button__delete {
+		background-color: red;
+		color: white;
+		padding: s.space(2);
+		border-radius: 4px;
+		text-decoration: none;
+		text-align: center;
+	}
+
+}
+
+main {
+	display: flex;
+	padding: s.space(10);
+	flex-direction: column;
+	gap: s.space(10);
+}

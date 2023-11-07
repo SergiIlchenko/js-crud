@@ -1,0 +1,24 @@
+.form {
+  padding: 16px;
+  margin: 16px;
+  gap: 80px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: max-content;
+  align-items: center;
+}
+.form__button {
+  border: 1px solid #ddd;
+  background-color: blue;
+  padding: 8px;
+  border-radius: 8px;
+  width: 200px;
+}
+.form__link {
+  color: white;
+  text-decoration: none;
+}
+
+/*# sourceMappingURL=style.css.map */
