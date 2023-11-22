@@ -1,0 +1,38 @@
+<main class='main'>
+	{{#with data}}
+	<form method="POST" action="/purchase-submit?id={{id}}" class='form-card'>
+		{{> heading title='Інформація про замовлення'}}
+
+		<div class="cart__text">
+			{{> form-field label='ID:' value='{{id}}'}}
+		</div>
+
+		{{> divider}}
+
+		<div class="cart cart__text">
+			{{> form-field label='Прізвище:' name='lastname' value=lastname}}
+			{{> form-field label="Ім'я:" name='firstname'}}
+
+			{{> form-field label='Мобільний телефон:' name='phone'}}
+			{{> form-field label="Електронна пошта:" name='email'}}
+		</div>
+
+		{{> divider}}
+		<div class="cart__text">
+			{{> form-field label='Адреса доставки:' name='delivery'}}
+			{{> form-field label='Назва товару:' name='product'}}
+		</div>
+		{{> divider}}
+
+		<div class="cart cart__text">
+			{{> form-field label='Вартість товарів:' name='totalPrice'}}
+			{{> form-field label='Вартість доставки:' name='deliveryPrice'}}
+			{{> form-field label='Сума до сплати:' name='totalPrice'}}
+			{{> form-field label='Нараховані бонуси:' name='bonus'}}
+		</div>
+		{{> divider}}
+
+		{{> button text="Змінити дані"}}
+	</form>
+	{{/with}}
+</main>

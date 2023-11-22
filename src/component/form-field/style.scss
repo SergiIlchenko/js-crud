@@ -1,0 +1,15 @@
+@use '../../lib/service.scss' as s;
+
+.field {
+	display: flex;
+	flex-direction: column;
+	gap: s.space(1);
+	width: 100%;
+}
+
+.field__ladel {
+	font-size: 16px;
+	color: gray;
+}
+
+
