@@ -76,7 +76,14 @@
 .purchase-item {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  text-decoration: none;
+  padding: 12px;
+}
+
+.purchase-item__block-id {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
 }
 
 .purchase-item__block {
@@ -86,15 +93,17 @@
 }
 
 .title {
-  display: flex;
-  align-items: center;
   color: gray;
-  font-size: 16px;
-  text-decoration: none;
+  font-size: 14px;
 }
 
 .text {
   font-size: 16px;
+  color: black;
+}
+
+.purchase-link {
+  text-decoration: none;
 }
 
 /*# sourceMappingURL=style.css.map */

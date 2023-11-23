@@ -1,38 +1,79 @@
 <main class='main'>
 	{{#with data}}
-	<form method="POST" action="/purchase-submit?id={{id}}" class='form-card'>
+	<section class='purchase-info'>
 		{{> heading title='Інформація про замовлення'}}
 
-		<div class="cart__text">
-			{{> form-field label='ID:' value='{{id}}'}}
+		<div class="purchase-item__block">
+			<span class='title'>ID:</span>
+			<span class='text'>{{id}}</span>
 		</div>
 
 		{{> divider}}
 
-		<div class="cart cart__text">
-			{{> form-field label='Прізвище:' name='lastname' value=lastname}}
-			{{> form-field label="Ім'я:" name='firstname'}}
+		<div class="purchase-item__1">
+			<div class="purchase-item__block">
+				<span class='title'>Ім'я:</span>
+				<span class='text'>{{firstname}}</span>
+			</div>
 
-			{{> form-field label='Мобільний телефон:' name='phone'}}
-			{{> form-field label="Електронна пошта:" name='email'}}
+			<div class="purchase-item__block">
+				<span class='title'>Прізвище:</span>
+				<span class='text'>{{lastname}}</span>
+			</div>
+
+			<div class="purchase-item__block">
+				<span class='title'>Мобільний телефон:</span>
+				<span class='text'>{{phone}}</span>
+			</div>
+
+			<div class="purchase-item__block">
+				<span class='title'>Електронна пошта:</span>
+				<span class='text'>{{email}}</span>
+			</div>
 		</div>
 
 		{{> divider}}
-		<div class="cart__text">
-			{{> form-field label='Адреса доставки:' name='delivery'}}
-			{{> form-field label='Назва товару:' name='product'}}
+		<div class="purchase-item__2">
+			<div class="purchase-item__block">
+				<span class='title'>Адреса доставки:</span>
+				<span class='text'>{{delivery}}</span>
+			</div>
+
+			<div class="purchase-item__block">
+				<span class='title'>Назва товару:</span>
+				<span class='text'>{{product}}</span>
+			</div>
+			<div class="purchase-item__block">
+				<span class='title'>Коментар:</span>
+				<span class='text'>{{comment}}</span>
+			</div>
 		</div>
 		{{> divider}}
 
-		<div class="cart cart__text">
-			{{> form-field label='Вартість товарів:' name='totalPrice'}}
-			{{> form-field label='Вартість доставки:' name='deliveryPrice'}}
-			{{> form-field label='Сума до сплати:' name='totalPrice'}}
-			{{> form-field label='Нараховані бонуси:' name='bonus'}}
+		<div class="purchase-item__1">
+			<div class="purchase-item__block">
+				<span class='title'>Вартість товарів:</span>
+				<span class='text'>{{totalPrice}}</span>
+			</div>
+
+			<div class="purchase-item__block">
+				<span class='title'>Вартість доставки:</span>
+				<span class='text'>{{deliveryPrice}}</span>
+			</div>
+
+			<div class="purchase-item__block">
+				<span class='title'>Сума до сплати:</span>
+				<span class='text'>{{totalPrice}}</span>
+			</div>
+
+			<div class="purchase-item__block">
+				<span class='title'>Нараховані бонуси:</span>
+				<span class='text'>{{bonus}}</span>
+			</div>
 		</div>
 		{{> divider}}
 
-		{{> button text="Змінити дані"}}
-	</form>
+		<a class="edit__link" href="/purchase-edit?id={{id}}">Змінити дані</a>
+	</section>
 	{{/with}}
 </main>

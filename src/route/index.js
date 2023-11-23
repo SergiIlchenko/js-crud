@@ -128,6 +128,7 @@ class Purchase {
 
     this.phone = data.phone
     this.email = data.email
+    this.delivery = data.delivery
 
     this.comment = data.comment || null
 
@@ -152,11 +153,12 @@ class Purchase {
   }
 
   static getList = () => {
-    return Purchase.#list
-      .reverse()
-      .map(({ id, product, price, bonus }) => {
-        id, product, price, bonus
-      })
+    return Purchase.#list.reverse().map((purchase) => ({
+      id: purchase.id,
+      product: purchase.product.title,
+      totalPrice: purchase.totalPrice,
+      bonus: Purchase.calcBonusAmount(purchase.totalPrice),
+    }))
   }
 
   static getById = (id) => {
@@ -172,6 +174,7 @@ class Purchase {
       if (data.lastname) purchase.lastname = data.lastname
       if (data.phone) purchase.phone = data.phone
       if (data.email) purchase.email = data.email
+      if (data.delivery) purchase.delivery = data.delivery
 
       return true
     } else {
@@ -452,7 +455,7 @@ router.post('/purchase-submit', function (req, res) {
 
 router.get('/purchase-list', function (req, res) {
   const list = Purchase.getList()
-
+  console.log(list)
   res.render('purchase-list', {
     style: 'purchase-list',
     title: 'Мої замовлення',
@@ -481,16 +484,16 @@ router.get('/purchase-info', function (req, res) {
 
     data: {
       id: purchase.id,
-      id,
-      firstname,
-      lastname,
-      phone,
-      email,
-      delivery,
-      product,
-      productPrice,
-      deliveryPrice,
-      totalPrice,
+      firstname: purchase.firstname,
+      lastname: purchase.lastname,
+      phone: purchase.phone,
+      email: purchase.email,
+      delivery: purchase.delivery,
+      product: purchase.product.title,
+      comment: purchase.comment,
+      productPrice: purchase.productPrice,
+      deliveryPrice: purchase.deliveryPrice,
+      totalPrice: purchase.totalPrice,
       bonus: bonus,
     },
   })
@@ -499,5 +502,60 @@ router.get('/purchase-info', function (req, res) {
 
 // ================================================================
 
+router.get('/purchase-edit', function (req, res) {
+  const id = Number(req.query.id)
+
+  const purchase = Purchase.getById(id)
+  console.log(purchase)
+
+  if (purchase) {
+    return res.render('purchase-edit', {
+      style: 'purchase-edit',
+      data: {
+        id: purchase.id,
+        firstname: purchase.firstname,
+        lastname: purchase.lastname,
+        phone: purchase.phone,
+        email: purchase.email,
+      },
+    })
+  } else {
+    return res.render('alert', {
+      style: 'alert',
+
+      data: {
+        info: 'Продукту за таким ID не знайдено',
+      },
+    })
+  }
+})
+// ================================================================
+
+router.post('/purchase-edit', function (req, res) {
+  const { id, firstname, lastname, phone, email } = req.body
+  const purchase = Purchase.updateById(id, {
+    firstname,
+    lastname,
+    phone,
+    email,
+  })
+  console.log(id)
+  console.log(purchase)
+  if (!purchase) {
+    res.render('alert', {
+      style: 'alert',
+      data: {
+        info: 'Інформація про замовлення оновлена',
+      },
+    })
+  } else {
+    res.render('alert', {
+      style: 'alert',
+      data: {
+        info: 'Сталася помилка',
+      },
+    })
+  }
+})
 // Підключаємо роутер до бек-енду
 module.exports = router

@@ -13,53 +13,42 @@
 	
 }
 
-.purchase-info {
+.purchase-edit__block {
 	width: 100%;
 	display: flex;
 	flex-direction: column;
-	gap: s.space(6);
+	gap: s.space(5);
 	padding: s.space(5);
 	border: 1px solid s.color(border);
 	border-radius: 10px;
 }
 
-.purchase-item__block {
+.purchase-item__block-id {
 	display: flex;
 	flex-direction: column;
 	gap: s.space(3);
 }
 
-.purchase-item__1 {
+.purchase-content {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	gap: s.space(3);
 }
 
-.purchase-item__2 {
+.purchase__filed {
 	display: flex;
 	flex-direction: column;
-	gap: s.space(3);
+	gap: s.space(2);
 }
 
-.title {
-	color: gray;
+.form__label {
 	font-size: 14px;
 	
 }
-.text {
-	font-size: 16px;
-	color: black;
-}
-
-.purchase-link {
-	text-decoration: none;
-}
-
-.edit__link {
-	background-color: blue;
-	color: white;
+.form__input {
+	border: 1px solid s.color('light');
 	padding: s.space(2);
-	border-radius: 4px;
-	text-decoration: none;
-	text-align: center;
 }
+
+
+
