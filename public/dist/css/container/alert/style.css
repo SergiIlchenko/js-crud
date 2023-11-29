@@ -1,24 +1,46 @@
-.form {
-  padding: 16px;
-  margin: 16px;
-  gap: 80px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  width: max-content;
+.card {
+  display: flex;
+  flex-direction: row;
   align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  margin: 24px;
+  gap: 32px;
+  border: 1px solid rgb(177, 172, 172);
+  border-radius: 4px;
 }
-.form__button {
-  border: 1px solid #ddd;
+.card__header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.card__title {
+  font-size: 20px;
+  font-weight: 700;
+}
+.card__subtitle {
+  font-size: 16px;
+  font-weight: 500;
+}
+.card__button {
   background-color: blue;
-  padding: 8px;
-  border-radius: 8px;
-  width: 200px;
-}
-.form__link {
   color: white;
+  border: 1px solid #ddd;
+  padding: 8px;
+  border-radius: 20px;
   text-decoration: none;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.user-list li {
+  padding-right: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 /*# sourceMappingURL=style.css.map */

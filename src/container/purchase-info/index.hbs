@@ -1,0 +1,79 @@
+<main class='main'>
+	{{#with data}}
+	<section class='purchase-info'>
+		{{> heading title='Інформація про замовлення'}}
+
+		<div class="purchase-item__block">
+			<span class='title'>ID:</span>
+			<span class='text'>{{id}}</span>
+		</div>
+
+		{{> divider}}
+
+		<div class="purchase-item__1">
+			<div class="purchase-item__block">
+				<span class='title'>Ім'я:</span>
+				<span class='text'>{{firstname}}</span>
+			</div>
+
+			<div class="purchase-item__block">
+				<span class='title'>Прізвище:</span>
+				<span class='text'>{{lastname}}</span>
+			</div>
+
+			<div class="purchase-item__block">
+				<span class='title'>Мобільний телефон:</span>
+				<span class='text'>{{phone}}</span>
+			</div>
+
+			<div class="purchase-item__block">
+				<span class='title'>Електронна пошта:</span>
+				<span class='text'>{{email}}</span>
+			</div>
+		</div>
+
+		{{> divider}}
+		<div class="purchase-item__2">
+			<div class="purchase-item__block">
+				<span class='title'>Адреса доставки:</span>
+				<span class='text'>{{delivery}}</span>
+			</div>
+
+			<div class="purchase-item__block">
+				<span class='title'>Назва товару:</span>
+				<span class='text'>{{product}}</span>
+			</div>
+			<div class="purchase-item__block">
+				<span class='title'>Коментар:</span>
+				<span class='text'>{{comment}}</span>
+			</div>
+		</div>
+		{{> divider}}
+
+		<div class="purchase-item__1">
+			<div class="purchase-item__block">
+				<span class='title'>Вартість товарів:</span>
+				<span class='text'>{{totalPrice}}</span>
+			</div>
+
+			<div class="purchase-item__block">
+				<span class='title'>Вартість доставки:</span>
+				<span class='text'>{{deliveryPrice}}</span>
+			</div>
+
+			<div class="purchase-item__block">
+				<span class='title'>Сума до сплати:</span>
+				<span class='text'>{{totalPrice}}</span>
+			</div>
+
+			<div class="purchase-item__block">
+				<span class='title'>Нараховані бонуси:</span>
+				<span class='text'>{{bonus}}</span>
+			</div>
+		</div>
+		{{> divider}}
+
+		<a class="edit__link" href="/purchase-edit?id={{id}}">Змінити дані</a>
+	</section>
+	{{/with}}
+</main>
