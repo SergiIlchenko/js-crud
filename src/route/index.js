@@ -110,10 +110,6 @@ class PlayList {
     )
   }
 
-  //   addTrack = (track) => {
-  //     this.#list.push(track)
-  //   }
-
   static findListByValue(name) {
     return this.#list.filter((playlist) =>
       playlist.name
@@ -365,6 +361,28 @@ router.post('/spotify-track-add', function (req, res) {
       playlistId: playlist.id,
       tracks: playlist.tracks,
       name: playlist.name,
+    },
+  })
+})
+
+// ================================================================
+
+router.get('/', function (req, res) {
+  const value = req.body.value || ''
+
+  const list = PlayList.findListByValue(value)
+
+  console.log(value)
+
+  res.render('index', {
+    style: 'index',
+
+    data: {
+      list: list.map(({ tracks, ...rest }) => ({
+        ...rest,
+        amount: tracks.length,
+      })),
+      value,
     },
   })
 })
