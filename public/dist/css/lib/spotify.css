@@ -82,35 +82,4 @@ a:hover {
   color: #BDBDBD;
 }
 
-.playlist__library {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.hright__title {
-  font-size: 40px;
-}
-
-.library__menu {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  gap: 16px;
-}
-
-.playlist__list-card {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
-  justify-content: space-between;
-}
-
-.playlist__card {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  margin: 20px;
-}
-
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=spotify.css.map */

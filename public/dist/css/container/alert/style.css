@@ -6,7 +6,7 @@
   padding: 16px;
   margin: 24px;
   gap: 32px;
-  border: 1px solid rgb(177, 172, 172);
+  border: 1px solid #ced4da;
   border-radius: 4px;
 }
 .card__header {
